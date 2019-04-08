@@ -1,0 +1,19 @@
+Package: betterposter
+Title: A Better Scientific Poster
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Garrick",
+           family = "Aden-Buie",
+           role = c("aut", "cre"),
+           email = "garrick@adenbuie.com")
+Description: A better scientific poster using the best markdown
+    technology available.
+License: MIT + file LICENSE
+Imports: 
+    htmltools,
+    pagedown,
+    utils
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1

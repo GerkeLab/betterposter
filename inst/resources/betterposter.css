@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:700|Source+Code+Pro|Source+Sans+Pro:300,700');
+
+@page {
+  size: 46.8in 33.1in;
+  margin: 0;
+}
+html, body {
+  background: #fff;
+}
+html {
+  font-family: "Roboto";
+  font-size: 24px;
+  color: #333;
+  width: 46.8in;
+  height: 33.09669in;
+  /*border: dashed 3px #a0a0a0;*/
+}
+body {
+  margin: 0;
+  width: 46.3in;
+  height: 32.59669in;
+  display: grid;
+  grid-gap: 0.25in;
+  grid-template-columns: 60px 60px;
+  padding: 0.25in !important;
+}
+
+/* ---- Grid ---- */
+body {
+  grid-template-areas:
+    "T H R"
+    "L H R"
+    "L H F";
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
+}
+
+#hero {
+  grid-area: H;
+}
+
+#left-bar {
+  grid-area: L;
+}
+
+#right-bar {
+  grid-area: R;
+}
+#title-container {
+  grid-area: T;
+}
+#references {
+  grid-area: F;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ---- General ---- */
+h1, h2, h3, h4 {
+  margin-block-end: 0;
+  font-family: "Roboto Slab", Arial, sans-serif;
+}
+p {
+  margin-block-start: 0.25em;
+}
+pre, pre.sourceCode {
+  font-size: 0.8em;
+  margin: 1em 0;
+  padding: 0.5em 0.5em;
+}
+code {
+  font-family: "Source Code Pro", Monaco, monospace;
+}
+blockquote {
+  font-style: italic;
+  padding-left: 1em;
+  border-left: 5pt solid #dadada;
+  margin-left: 0;
+}
+sup {
+  font-size: 0.75em;
+  font-style: normal;
+  margin-left: 4pt;
+}
+
+/* ---- Hero ---- */
+#hero {
+  position: relative;
+  background: #0F5D4F;
+  color: #fff;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  padding: 10%;
+  font-size: 48px;
+}
+
+#hero h1 {
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-size: 3.25em;
+  font-weight: 400;
+  padding-top: %;
+}
+
+#hero h1 strong {
+  font-weight: 700;
+}
+
+#hero p {
+  padding: 10pt 0;
+}
+
+#hero > p:first-of-type {
+  padding-top: 6em;
+}
+
+#hero img.qrcode {
+  position: absolute;
+  bottom: 5%;
+}
+
+#qrcode {
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+}
+
+/* ---- Social ---- */
+
+/* ---- Title ---- */
+#title-container {
+  padding: 5% 5% 0 5%;
+  background: none;
+}
+
+#title-container .author, #title-container .affiliation {
+  color: #888;
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+#title-container .author {
+  font-style: italic;
+  font-size: 1.25em;
+}
+#title-container .affiliation {
+  font-weight: normal;
+}
+
+/* ---- Silent Bar (Left Bar) ---- */
+#left-bar {
+  background: none;
+  padding: 0 5%;
+}
+
+/* ---- Ammo Bar (Right Bar) ---- */
+#right-bar {
+  background: #fff;
+  padding: 5%;
+}
+
+/* ---- References ---- */
+#references {
+  padding: 0 5%;
+}
+#references p, #references ul, #references ol {
+  font-size: 0.6em;
+}
+
+/* ---- Tables ---- */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+  width: 100%;
+  border: .05rem solid #dadada;
+}
+table thead {
+  background: #dadada;
+}
+table td,
+table th {
+  padding: .1rem .2rem;
+  font-size: small;
+}
+
+table th {
+  border-bottom-width: .1rem;
+}

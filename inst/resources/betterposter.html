@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"$if(lang)$ lang="$lang$" xml:lang="$lang$"$endif$>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    $for(author-meta)$<meta name="author" content="$author-meta$" />$endfor$
+    $if(date-meta)$<meta name="date" content="$date-meta$" />$endif$
+    <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+
+    $for(header-includes)$
+    $header-includes$
+    $endfor$
+
+    $if(highlightjs)$
+    <link rel="stylesheet" href="$highlightjs$/$if(highlightjs-theme)$$highlightjs-theme$$else$default$endif$.css" $if(html5)$$else$type="text/css" $endif$/>
+    <script src="$highlightjs$/highlight.js"></script>
+    <script type="text/javascript">hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+    $endif$
+
+    $if(highlighting-css)$<style type="text/css">$highlighting-css$</style>$endif$
+
+    $for(css)$
+    <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+    $endfor$
+
+    <style>
+    $if(hero_background)$
+    #hero { background: $hero_background$;}
+    $endif$
+    $if(hero_color)$
+    #hero * { color: $hero_color$;}
+    $endif$
+    $if(logo)$
+    #left-bar {
+      background-image: url($logo$);
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      background-size: 33%;
+      margin-bottom: 2%;
+    }
+    $endif$
+    $if(accent_color)$
+    a, a:visited, a:hover, a:focus, a:active { color: $accent_color$; }
+    strong, b, sup { color: $accent_color$; }
+    /*h1, h2, h3, h4, h5, h6 { color: $accent_color$;}*/
+    $endif$
+    </style>
+
+  </head>
+  <body>
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+$if(title)$
+<div id="title-container">
+    <h1>$title$</h1>
+    $if(author)$
+    <div class="author">
+      $for(author)$<span style="white-space: pre">$author.name$</span>$if(author.affiliation)$<sup>$author.affiliation$</sup>$endif$$if(author.extra)$ ($for(author.extra)$$author.extra$$sep$, $endfor$)$endif$$sep$, $endfor$
+    </div>
+    $endif$
+    $if(affiliation)$
+    <div class="affiliation">
+      <ol>
+      $for(affiliation)$
+      <li>$affiliation$</li>
+      $endfor$
+      </ol>
+    </div>
+    $endif$
+</div>
+$endif$
+
+$body$
+
+<script type="text/javascript">
+(function() {
+  // break words in <a> if the text and uri are identical
+  els = document.getElementsByTagName('a');
+  for (i = 0; i < els.length; i++) {
+    el = els[i];
+    if (el.getAttribute('href') === el.innerText) el.style.wordBreak = 'break-all';
+  }
+})();
+</script>
+
+$if(math)$
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "$if(mathjax)$$mathjax$$endif$";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+$endif$
+
+$if(qrcode_text)$
+<script type="text/javascript">
+  (function() {
+    // Add qrcode div to hero
+    var qr_el = document.createElement("div");
+    qr_el.id = "qrcode";
+    document.getElementById('hero').appendChild(qr_el);
+  })();
+
+  var qrcode = new QRCode(document.getElementById("qrcode"), {
+  	text: "$if(qrcode_text)$$qrcode_text$$endif$",
+  	width: $if(qrcode_size)$$qrcode_size$$else$250$endif$,
+  	height: $if(qrcode_size)$$qrcode_size$$else$250$endif$,
+  	colorDark: "$if(qrcode_color_background)$$qrcode_color_background$$else$#000000$endif$",
+  	colorLight: "$if(qrcode_color)$$qrcode_color$$else$#FFFFFF$endif$",
+  	correctLevel : QRCode.CorrectLevel.L
+  });
+</script>
+$endif$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+  </body>
+</html>

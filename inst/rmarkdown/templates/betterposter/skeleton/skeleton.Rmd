@@ -1,0 +1,189 @@
+---
+title: >
+  Another Better Scientific Poster Using R Markdown and pagedown
+author:
+  - name: Garrick Aden-Buie
+    affiliation: 1
+    extra:
+      - "garrick@adenbuie.com"
+      - "&commat;grrrck"
+  - name: Mike Morrison
+    affiliation: 2
+  - name: Brent Thorne
+    affiliation: 3
+  - name: Yihui Xie
+    affiliation: 4
+affiliation:
+  - Gerke Lab, Moffitt Cancer Center, Tampa, FL
+  - Michigan State University
+  - Author and maintainer of [posterdown](https://github.com/brentthorne/posterdown)
+  - Author of [pagedown](https://github.com/rstudio/pagedown) and much, much more!
+date: "`r Sys.Date()`"
+output:
+  betterposter::poster_better:
+    # Optional styling arguments
+    hero_background: "#0F5D4F"
+    accent_color: "#444444"
+    hero_color: "#FFFFFF"
+    logo: "http://bit.ly/2UFWcbr"
+    # See betterposter::qrcode_options() for help
+    qrcode:
+      text: "https://github.com/gadenbuie/betterposter"
+      size: "350"
+    mathjax: false
+    # Generic rmarkdown arguments
+    highlight: tango
+    self_contained: true
+references:
+  - id: fenner2012a
+    title: One-click science marketing
+    author:
+    - family: Fenner
+      given: Martin
+    container-title: Nature Materials
+    volume: 11
+    URL: 'http://dx.doi.org/10.1038/nmat3283'
+    DOI: 10.1038/nmat3283
+    issue: 4
+    publisher: Nature Publishing Group
+    page: 261-263
+    type: article-journal
+    issued:
+      year: 2012
+      month: 3
+---
+
+```{css echo=FALSE}
+/* Adjust space at top of #hero (center panel) */
+#hero {
+  padding-top: 33%;
+}
+```
+
+
+<div id="hero">
+<!--
+  Center Column of Poster
+
+  * The main text goes in <h1> (single #) header.
+  * You can add additional text if desired.
+-->
+
+# **Main finding** goes here, translated into **plain english**. **Emphasize** the important words.
+
+*Additional text and content can be added here if you really want.*
+
+
+</div>
+
+
+
+<div id="left-bar">
+<!-- Text in the left bar, title and authors added automatically -->
+
+## Abstract
+
+In recent years, much research has been devoted to the emulation of DHCP; on the other hand, few have explored the construction of journaling file systems.
+The inability to effect complexity theory of this has been encouraging. The notion that cryptographers synchronize with game-theoretic configurations is largely adamantly opposed [@fenner2012a].
+
+
+## Methods
+
+1. IPv6 can be made autonomous, concurrent, and client-server
+
+2. 7-month-long trace showing that our design is feasible
+
+3. Suffix trees and the Ethernet are entirely incompatible.
+
+4. Model for our methodology:
+    - fiber-optic cables
+    - simulated annealing
+    - superblocks
+    - multicast algorithms
+
+## Implementation
+
+After several days of difficult implementing, we finally have a working implementation of our heuristic.
+BEVY is composed of a **hacked operating system**, a codebase of **61** Lisp files, and a **hand-optimized compiler**.
+
+![](https://upload.wikimedia.org/wikipedia/commons/f/fa/Conventional_ETL_Diagram.jpg)
+
+## Evaluation
+
+Is it possible to justify having paid little attention to our implementation and experimental setup? 
+Yes, but only in theory. 
+
+We ran four novel experiments: 
+
+1. Deployed 35 Macintosh SEs underwater and compared our suffix trees accordingly
+2. Compared effective time since 1967 on the Sprite, L4 and Multics operating systems
+3. Measured _tape drive throughput_ as a function of _hard disk space_ on an `Apple ][`
+4. Deployed 36 `Apple ][`es across the 100-node network and tested again
+
+## Results
+
+In conclusion, in our research we described **BEVY**, a novel heuristic for the analysis of link-level acknowledgements. 
+We proved that simplicity in our heuristic is not a question. 
+Our framework for developing the analysis of thin clients is famously excellent.
+
+This text brought to you by [SCIgen](https://pdos.csail.mit.edu/archive/scigen/), an Automatic CS Paper Generator.
+
+</div>
+
+
+
+<div id="right-bar">
+<!-- Right bar -->
+
+# Extra Tables & Figures
+
+## Cars are fast
+
+```{r eval=TRUE, echo=TRUE, warning=FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2)
+
+mtcars %>%
+  skimr::skim_to_wide() %>%
+  select(variable, n, mean, sd, p0, p50, p100) %>%
+  knitr::kable(format = "html")
+```
+
+## Flowers are pretty
+
+```{r, fig.width=6, fig.height = 3, out.width="100%"}
+ggplot(iris) +
+  aes(Petal.Length, Petal.Width, color = Species) +
+  geom_point()
+```
+
+## Starwars has characters
+
+```{r echo=TRUE}
+starwars %>%
+  mutate(n_films = sapply(films, length)) %>%
+  select(name, hair_color, height, species, n_films) %>%
+  arrange(desc(n_films)) %>%
+  head(10) %>%
+  knitr::kable(caption = paste(
+    "Characters with most",
+    "appearances in Star Wars movies."))
+```
+
+## Heavy cars are inefficient
+
+```{r, fig.width=6, fig.height = 3, out.width="100%"}
+ggplot(mtcars) +
+  aes(wt, mpg) +
+  geom_smooth(method = "lm") +
+  geom_point() +
+  labs(title = "Something something cars",
+       subtitle = "A boring regression",
+       caption = "Source: {mtcars} of course",
+       x = "Weight of the car",
+       y = "Fuel efficiency (mpg)")
+```
+
+</div>
+
+# References
