@@ -13,6 +13,8 @@ You can install the in-development version of **betterposter** from GitHub with:
 remotes::install_packages("gerkelab/betterposter")
 ```
 
-Then use `betterposter::poster_better()` to get an awesome poster generated from R Markdown!
+## Usage
+
+Use `betterposter::poster_better()` to get an awesome poster generated from R Markdown!
 
 ![](man/figures/betterposter-example.png)
