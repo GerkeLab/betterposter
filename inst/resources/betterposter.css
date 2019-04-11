@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:700|Source+Code+Pro|Source+Sans+Pro:300,700');
 
 @page {
-  size: 46.8in 33.1in;
+  width: 46.8in;
+  height: 33.1in;
   margin: 0;
 }
 html, body {
@@ -13,7 +14,6 @@ html {
   color: #333;
   width: 46.8in;
   height: 33.09669in;
-  /*border: dashed 3px #a0a0a0;*/
 }
 body {
   margin: 0;

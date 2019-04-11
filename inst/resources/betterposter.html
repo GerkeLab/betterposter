@@ -27,6 +27,29 @@
     $endfor$
 
     <style>
+    /* Override template defaults */
+    $if(height)$
+    @page {
+      height: $height$;
+    }
+    html {
+      height: $height$;
+    }
+    body {
+      height: calc($height$ - 0.5in);
+    }
+    $if(height)$
+    $if(width)$
+    @page {
+      width: $width$;
+    }
+    html {
+      width: $width$;
+    }
+    body {
+      width: calc($width$ - 0.5in);
+    }
+    $if(width)$
     $if(hero_background)$
     #hero { background: $hero_background$;}
     $endif$

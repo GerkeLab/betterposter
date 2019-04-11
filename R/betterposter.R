@@ -5,6 +5,8 @@
 poster_better <- function(
   ...,
   css = NULL,
+  height = NULL,
+  width = NULL,
   hero_background = NULL,
   hero_color = NULL,
   qrcode = NULL,
@@ -33,6 +35,8 @@ poster_better <- function(
   }
 
   pandoc_args <- c(pandoc_args, pandoc_arg(c(
+    height = if (!is.null(height)) paste0(height, "in"),
+    width = if (!is.null(width)) paste0(width, "in"),
     hero_background = hero_background,
     hero_color = hero_color,
     logo = logo,
