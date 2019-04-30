@@ -38,7 +38,7 @@
     body {
       height: calc($height$ - 0.5in);
     }
-    $if(height)$
+    $endif$
     $if(width)$
     @page {
       width: $width$;
@@ -49,7 +49,7 @@
     body {
       width: calc($width$ - 0.5in);
     }
-    $if(width)$
+    $endif$
     $if(hero_background)$
     #hero { background: $hero_background$;}
     $endif$
