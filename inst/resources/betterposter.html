@@ -141,8 +141,8 @@ $if(qrcode_text)$
   	text: "$if(qrcode_text)$$qrcode_text$$endif$",
   	width: $if(qrcode_size)$$qrcode_size$$else$250$endif$,
   	height: $if(qrcode_size)$$qrcode_size$$else$250$endif$,
-  	colorDark: "$if(qrcode_color_background)$$qrcode_color_background$$else$#000000$endif$",
-  	colorLight: "$if(qrcode_color)$$qrcode_color$$else$#FFFFFF$endif$",
+  	colorLight: "$if(qrcode_color_background)$$qrcode_color_background$$else$#000000$endif$",
+  	colorDark: "$if(qrcode_color)$$qrcode_color$$else$#FFFFFF$endif$",
   	correctLevel : QRCode.CorrectLevel.L
   });
 </script>
