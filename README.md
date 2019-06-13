@@ -17,7 +17,8 @@ A better scientific poster, inspired by [Mike Morrison's Better Poster Template]
 You can install the in-development version of **betterposter** from GitHub with:
 
 ``` r
-remotes::install_packages("gerkelab/betterposter")
+# install.packages("devtools")
+devtools::install_github("gerkelab/betterposter")
 ```
 
 ## Usage
