@@ -149,11 +149,11 @@ mtcars %>%
   knitr::kable(format = "html")
 ```
 
-## Flowers are pretty
+## Diamonds are foreveer
 
 ```{r, fig.width=6, fig.height = 3, out.width="100%"}
-ggplot(iris) +
-  aes(Petal.Length, Petal.Width, color = Species) +
+ggplot(diamonds) +
+  aes(cut, price) +
   geom_point()
 ```
 
