@@ -144,16 +144,15 @@ library(dplyr)
 library(ggplot2)
 
 mtcars %>%
-  skimr::skim_to_wide() %>%
-  select(variable, n, mean, sd, p0, p50, p100) %>%
+  head() %>% 
   knitr::kable(format = "html")
 ```
 
-## Flowers are pretty
+## Diamonds are foreveer
 
 ```{r, fig.width=6, fig.height = 3, out.width="100%"}
-ggplot(iris) +
-  aes(Petal.Length, Petal.Width, color = Species) +
+ggplot(diamonds) +
+  aes(carat, price) +
   geom_point()
 ```
 
